@@ -9,7 +9,7 @@ services:
     plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py migrate && python manage.py collectstatic --no-input && gunicorn config.wsgi:application
+    startCommand: python manage.py migrate && python manage.py collectstatic --no-input && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     healthCheckPath: /api/patients/
     envVars:
       - key: DATABASE_URL
@@ -21,7 +21,7 @@ services:
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: patient-management-api.onrender.com
+        value: .onrender.com
       - key: CORS_ALLOWED_ORIGINS
         value: https://patient-management-frontend.onrender.com
 
