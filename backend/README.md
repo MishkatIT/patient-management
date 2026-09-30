@@ -34,6 +34,8 @@ python manage.py runserver
 
 The API is available at `http://localhost:8000/api/`. The custom user logs in with a mobile number.
 
+For Render, `DATABASE_URL` takes precedence over the individual PostgreSQL variables. The repository's root `render.yaml` configures this automatically and starts the app with Gunicorn after running migrations and collecting static files.
+
 ## Seed data
 
 ```powershell
