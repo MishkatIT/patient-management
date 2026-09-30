@@ -23,7 +23,7 @@ services:
       - key: ALLOWED_HOSTS
         value: .onrender.com
       - key: CORS_ALLOWED_ORIGINS
-        value: https://patient-management-frontend.onrender.com
+        value: https://patient-management-frontend-h6yb.onrender.com
 
   - type: web
     name: patient-management-frontend
@@ -33,4 +33,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://patient-management-api.onrender.com/api
+        fromService:
+          name: patient-management-api
+          type: web
+          envVarKey: RENDER_EXTERNAL_HOSTNAME
