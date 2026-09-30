@@ -1,0 +1,9 @@
+:root { font: 14px/1.45 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; color: #0f172a; background: #f8fafc; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+#root { min-height: 100svh; }
